@@ -1,8 +1,10 @@
-# Terraform Module - DNS Updater
+# Your deliverable: Terraform Module - DNS Updater
 
 The first version of this Terraform module is just capable of creating a fixed set of DNS entries against a DNS Server as per RFC-2845 by using the official [DNS Terraform provider](https://registry.terraform.io/providers/hashicorp/dns/latest).
 
-In order to create DNS records dynamically without hard coding values, you have been tasked with the enhancement of ensuring the module can read an arbitrary number of JSON files from disk on a local directory named `input-json` that contains all the necessary attributes to create DNS records. As we are still prototyping the solution, we are only going to support `A` DNS Record types. It's also safe to assume that one JSON file equates to one DNS record.
+In order to create DNS records dynamically without hard coding values, **you have been tasked with the enhancement of ensuring the module can read an arbitrary number of JSON files from disk on a local directory named `input-json` that contains all the necessary attributes to create DNS records**. 
+
+As we are still prototyping the solution, we are only going to support `A` DNS Record types. It's also safe to assume that one JSON file equates to one DNS record.
 
 ```
 # JSON File structure
@@ -30,8 +32,8 @@ You should exclusively work under a xNIX-like Operating System (e.g. Linux). Mor
 1- Fork this repository to your own `GitHub` profile and start getting familiar with all inner folders and files.
 2- After cloning the repo to your local dev. machine, run the shell command available under `tests`  (`tests/build-and-run.sh`) so you mock out a local DNS service based on `BIND9` that will let you test the Terraform module
 3- Make sure you can successfully run `terraform` commands under the basic example, and it works whenever you execute terraform `init` `plan` and `apply` commands.
-3- Collect information from the DNS Terraform provider, and find out how you would consume all the JSON files under `examples/exercise/input-json`
-4- Bear in mind that this initial prototype must work with any number of JSON files that are dropped under `examples/exercise/input-json` and should ignore any other non-json file extensions.
+4- Collect information from the DNS Terraform provider, and find out how you would consume all the JSON files under `examples/exercise/input-json`
+5- Bear in mind that this initial prototype must work with any number of JSON files that are dropped under `examples/exercise/input-json` and should ignore any other non-json file extensions.
 
 Once you finish, make sure you `commit` and `push` all the content you have been working on as well as share the URL publicly via a GitHub URL with your recruiter.
 
