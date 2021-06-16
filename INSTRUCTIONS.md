@@ -1,8 +1,8 @@
 # Terraform Module - DNS Updater
 
-The first version of this module is just capable of creating a fixed set of DNS entries against a DNS Server as per RFC-2845 by using the official [DNS Terraform provider](https://registry.terraform.io/providers/hashicorp/dns/latest).
+The first version of this Terraform module is just capable of creating a fixed set of DNS entries against a DNS Server as per RFC-2845 by using the official [DNS Terraform provider](https://registry.terraform.io/providers/hashicorp/dns/latest).
 
-In order to create records more dynamically, you have been tasked with the enhancement of ensuring the module can read an arbitrary number of JSON files from disk at the `input-json` directory from where Terraform runs in order to update the DNS server accordingly. As we are still prototyping the solution, we are only going to support `A` DNS Record types.
+In order to create DNS records dynamically without hard coding values, you have been tasked with the enhancement of ensuring the module can read an arbitrary number of JSON files from disk on a local directory named `input-json` that contains all the necessary attributes to create DNS records. As we are still prototyping the solution, we are only going to support `A` DNS Record types. It's also safe to assume that one JSON file equates to one DNS record.
 
 ```
 # JSON File structure
@@ -17,7 +17,7 @@ In order to create records more dynamically, you have been tasked with the enhan
 ## JSON File Object --> Attributes of a DNS Record
 ```
 
-The examples folder contains a [basic example](./examples/basic) to get you started, however you are supposed to provide another working example under the `exercise` folder. So, consider updating, creating, or deleting any file you consider relevant within this repository.
+The examples folder contains a [basic example](./examples/basic) to get you started, however you are supposed to provide another working example under the `exercise` folder. So, feel free to update, create, or delete any file you consider pertinent within this repository.
 
 ## Way of working
 
