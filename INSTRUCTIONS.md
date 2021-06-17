@@ -29,10 +29,10 @@ You should exclusively work under a xNIX-like Operating System (e.g. Linux). Mor
 - Docker
 - Terraform
 
-1. Clone this repository and upload to a new repo under your own `GitHub` profile and start getting familiar with all inner folders and files.
-1. After cloning the repo to your local dev. machine, run the shell command available under `tests`  (`tests/build-and-run.sh`) so you mock out a local DNS service based on `BIND9` that will let you test the Terraform module
+1. Create a new public `GitHub` repository under your profile and branch out from this sample code. Then, start getting familiar with all inner folders and files.
+1. Run the `shell script` available under `tests` (`tests/build-and-run.sh`) so you mock out a local DNS service based on `BIND9` that will let you test the Terraform module. This execution would spin up a Docker container with a BIND enabled.
 1. Make sure you can successfully run `terraform` commands under the basic example, and it works whenever you execute terraform `init` `plan` and `apply` commands.
-1. Collect information from the DNS Terraform provider, and find out how you would consume all the JSON files under `examples/exercise/input-json`
+1. Collect information from the DNS Terraform provider, and find out how you would consume all the JSON files under `examples/exercise/input-json` so that the code becomes more versatile.
 1. Bear in mind that this initial prototype must work with any number of JSON files that are dropped under `examples/exercise/input-json` and should ignore any other non-json file extensions.
 
 Once you finish, make sure you `commit` and `push` all the content you have been working on to your own repo, as well as share the GitHub URL with your recruiter.
