@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #+++++++++++++++++++
-## Description: This script builds the local dns-server Docker image and tags it as "terraform-dns-ns-tests"
+## Description: This script builds the local dns-server Docker image (tagged as "terraform-dns-ns-tests"), then run the container with the `--rm` Docker flag and attaches a console to it to see logs in real time.
 ## Author: Marcos Soutullo
 ## Requirements:
 ##   - docker
@@ -39,6 +39,9 @@ CONTAINER_NAME="terraform-dns-ns-tests"
 CONTAINER_TAG="v1.0.0"
 EXAMPLE_DOMAIN="example.com"
 
+_log "Delete any running/paused Docker container to avoid overlapping"
+docker rm --force terraform-dns-ns-tests || _log "Container doesn't exist"
+
 _log "Build Docker image to run terraform tests"
 docker build --tag ${CONTAINER_NAME}:${CONTAINER_TAG} ${SCRIPT_DIR}/dns-server
 
@@ -50,3 +53,7 @@ docker run -d --privileged --tmpfs /tmp --tmpfs /run \
     -p 127.0.0.1:53:53 \
     -p 127.0.0.1:53:53/udp \
     --rm --name ${CONTAINER_NAME} --hostname ns.${EXAMPLE_DOMAIN} ${CONTAINER_NAME}:${CONTAINER_TAG}
+
+_log "You can now attach a console to the recently created container by running the following command"
+echo
+echo "docker exec -it terraform-dns-ns-tests bash -c 'journalctl -f -u named.service'"
