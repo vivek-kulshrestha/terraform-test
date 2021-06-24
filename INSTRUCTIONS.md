@@ -1,6 +1,6 @@
 # Your deliverable: Terraform Module - DNS Updater
 
-The first version of this Terraform module is just capable of creating a fixed set of DNS entries against a DNS Server as per RFC-2845 by using the official [DNS Terraform provider](https://registry.terraform.io/providers/hashicorp/dns/latest).
+The first version of this Terraform module is just capable of creating a fixed set of DNS entries against a DNS Server as per RFC-2136 by using the official [DNS Terraform provider](https://registry.terraform.io/providers/hashicorp/dns/latest).
 
 In order to create DNS records dynamically without hard coding values, **you have been tasked with the enhancement of ensuring the module can read an arbitrary number of JSON files from disk on a local directory named `input-json` that contains all the necessary attributes to create DNS records**. 
 
