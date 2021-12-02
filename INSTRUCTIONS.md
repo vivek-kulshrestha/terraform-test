@@ -4,9 +4,10 @@ The first version of this Terraform module is just capable of creating a fixed s
 
 In order to create DNS records dynamically without hard coding values, **you have been tasked with the enhancement of ensuring the module can read an arbitrary number of JSON files from disk on a local directory named `input-json` that contains all the necessary attributes to create DNS records**. 
 
-```
-Do not worry if you are not able to complete the exercise. Please ensure that you push your code to your repo so that you can talk about your approach at the interview.
-```
+
+> Do not worry if you are not able to complete the exercise. Please ensure that you push your code to your repo so that you can talk about your approach at the interview.
+
+> Please, do not allocate more than 2/3 hours to the development of this exercise.
 
 As we are still prototyping the solution, we are only going to support `A` DNS Record types. It's also safe to assume that one JSON file equates to one DNS record. Also, the DNS authoritative zone will always be `example.com.`
 
